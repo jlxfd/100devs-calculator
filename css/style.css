@@ -48,6 +48,12 @@ button {
     margin: .3rem;
 }
 
+h1 {
+    text-align: right;
+    font-size: 2.5rem;
+    padding: .25rem;
+}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
