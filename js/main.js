@@ -1,9 +1,20 @@
-const nums = document.querySelectorAll('.num');
-const op = document.querySelectorAll('.op');
+const op = document.getElementsByClassName('op');
 
-nums.addEventListener('click', run);
+Array.from(op).forEach(x => x.addEventListener('click', checkOp));
 
-function run(e) {
-    e.preventDefault()
-    console.log(e.target)
+let ops = []
+let n = '';
+
+function checkOp(e) {
+    // console.log(e.target.innerText);
+
+    if (e.target.classList.contains('num')) {
+        n += e.target.innerText;
+    } else {
+        ops.push(n);
+        n = '';
+        ops.push(e.target.innerText)
+    }
+
+    console.log(ops)
 }
