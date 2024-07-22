@@ -16,5 +16,26 @@ function checkOp(e) {
         ops.push(e.target.innerText)
     }
 
-    console.log(ops)
+    return ops;
+}
+
+function Calculator() {
+    this.methods = {
+        '+' : (a, b) => a + b,
+        '-' : (a, b) => a - b,
+        '/' : (a, b) => a / b,
+        '*' : (a, b) => a * b
+    }
+
+    this.calculate = function(arr) {
+        let a = +arr[0];
+        let b = +arr[2];
+        let opd = arr[1];
+
+        if (!this.methods[opd] || a === NaN || b === NaN || opd === NaN) {
+            return NaN;
+        }
+
+        return this.methods[opd](a, b)
+    }
 }
